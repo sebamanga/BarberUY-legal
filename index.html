@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad · BarberUY</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #0d1b2a;
+      --ink2:    #2e3f52;
+      --muted:   #6b7a8d;
+      --line:    #e4e8ed;
+      --accent:  #c8a96e;
+      --bg:      #f7f5f0;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--ink);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(200,169,110,0.04) 40px,
+        rgba(200,169,110,0.04) 41px
+      );
+    }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: 0.5px;
+    }
+    .logo-text span { color: var(--accent); }
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .accent-line {
+      width: 48px; height: 3px;
+      background: var(--accent);
+      margin: 20px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── Layout ── */
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0 48px;
+    }
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 6px 24px;
+    }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 0;
+      transition: color 0.2s;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 22px;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 24px;
+    }
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    p { color: var(--ink2); margin-bottom: 14px; font-size: 15px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 16px;
+    }
+    .card-icon { font-size: 22px; margin-bottom: 8px; }
+    .card-label { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .card-desc  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--white);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .highlight p { font-size: 14px; }
+
+    /* ── List ── */
+    ul.styled {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    ul.styled li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--ink2);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ul.styled li:last-child { border-bottom: none; }
+    ul.styled li::before {
+      content: '—';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 48px 0;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--ink);
+      border-radius: 16px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .contact-box h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+    .contact-box p { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 20px; }
+    .contact-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .contact-box a:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <div class="logo-icon">✂️</div>
+    <div class="logo-text">Barber<span>UY</span></div>
+  </div>
+  <h1>Política de Privacidad</h1>
+  <p>Última actualización: marzo de 2026</p>
+  <div class="accent-line"></div>
+</header>
+
+<div class="wrapper">
+
+  <nav class="toc">
+    <div class="toc-title">Contenido</div>
+    <ol>
+      <li><a href="#s1">Quiénes somos</a></li>
+      <li><a href="#s2">Datos que recopilamos</a></li>
+      <li><a href="#s3">Cómo usamos tus datos</a></li>
+      <li><a href="#s4">Compartir información</a></li>
+      <li><a href="#s5">Pagos y facturación</a></li>
+      <li><a href="#s6">Ubicación</a></li>
+      <li><a href="#s7">Notificaciones push</a></li>
+      <li><a href="#s8">Tus derechos</a></li>
+      <li><a href="#s9">Seguridad</a></li>
+      <li><a href="#s10">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="s1">
+    <div class="section-num">01</div>
+    <h2>Quiénes somos</h2>
+    <p>BarberUY es una aplicación móvil desarrollada en Uruguay que conecta clientes con barberías. Permite a los clientes descubrir barberías, reservar turnos y recibir recordatorios; y a los dueños y barberos gestionar su agenda, servicios y equipo de trabajo.</p>
+    <p>Esta política explica qué información recopilamos, por qué la recopilamos y cómo la protegemos. Al usar BarberUY, aceptás los términos aquí descritos.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="s2">
+    <div class="section-num">02</div>
+    <h2>Datos que recopilamos</h2>
+    <p>Recopilamos únicamente la información necesaria para que la app funcione correctamente, según el tipo de usuario:</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <div class="card-label">Nombre y apellido</div>
+        <div class="card-desc">Para identificarte dentro de la plataforma.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📧</div>
+        <div class="card-label">Correo electrónico</div>
+        <div class="card-desc">Para el inicio de sesión y comunicaciones.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📍</div>
+        <div class="card-label">Ubicación</div>
+        <div class="card-desc">Para mostrar barberías cercanas a vos.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖼️</div>
+        <div class="card-label">Foto de perfil</div>
+        <div class="card-desc">Opcional. Para personalizar tu cuenta.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">💳</div>
+        <div class="card-label">Datos de pago</div>
+        <div class="card-desc">Solo para suscripciones de barberías, gestionados por Mercado Pago.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <div class="card-label">Reservas y turnos</div>
+        <div class="card-desc">Historial de turnos para gestionar la agenda.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="s3">
+    <div class="section-num">03</div>
+    <h2>Cómo usamos tus datos</h2>
+    <ul class="styled">
+      <li>Permitir el registro, inicio de sesión y gestión de tu cuenta.</li>
+      <li>Mostrar barberías disponibles según tu ubicación.</li>
+      <li>Crear, confirmar y gestionar reservas de turnos.</li>
+      <li>Enviar notificaciones sobre tus turnos (recordatorios, confirmaciones, cancelaciones).</li>
+      <li>Permitir a los dueños de barberías gestionar su agenda, servicios y equipo.</li>
+      <li>Procesar suscripciones de barberías a través de Mercado Pago.</li>
+      <li>Mejorar la experiencia y funcionalidad de la app.</li>
+    </ul>
+
+    <div class="highlight">
+      <p>No usamos tus datos para publicidad de terceros, ni los vendemos bajo ninguna circunstancia.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="s4">
+    <div class="section-num">04</div>
+    <h2>Compartir información</h2>
+    <p>No compartimos tu información personal con terceros, salvo en los siguientes casos estrictamente necesarios:</p>
+    <ul class="styled">
+      <li><strong>Entre usuarios de la plataforma:</strong> cuando hacés una reserva, la barbería recibe tu nombre para confirmar el turno.</li>
+      <li><strong>Mercado Pago:</strong> para procesar los pagos de suscripción de barberías. BarberUY no almacena datos de tarjetas ni información financiera sensible.</li>
+      <li><strong>Firebase (Google):</strong> usamos Firebase para autenticación, base de datos y notificaciones push. Google procesa estos datos según su propia política de privacidad.</li>
+      <li><strong>Obligación legal:</strong> si una autoridad competente lo requiere por ley.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section id="s5">
+    <div class="section-num">05</div>
+    <h2>Pagos y facturación</h2>
+    <p>Los pagos de suscripción de las barberías se procesan exclusivamente a través de <strong>Mercado Pago</strong>. BarberUY actúa como intermediario y no tiene acceso a los datos completos de tarjetas de crédito, débito ni cuentas bancarias.</p>
+    <p>Los datos de pago son gestionados y protegidos directamente por Mercado Pago, bajo sus propios estándares de seguridad (PCI-DSS). Para más información, podés consultar la política de privacidad de Mercado Pago en su sitio oficial.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="s6">
+    <div class="section-num">06</div>
+    <h2>Ubicación</h2>
+    <p>BarberUY solicita acceso a tu ubicación <strong>únicamente cuando usás la app</strong> (no en segundo plano) para mostrarte barberías cercanas. Podés denegar este permiso en cualquier momento desde la configuración de tu dispositivo; en ese caso, las funciones de búsqueda por cercanía no estarán disponibles.</p>
+    <p>No almacenamos un historial de ubicaciones ni rastreamos tus movimientos.</p>
+  </section>
+
+  <!-- 7 -->
+  <section id="s7">
+    <div class="section-num">07</div>
+    <h2>Notificaciones push</h2>
+    <p>Enviamos notificaciones push para informarte sobre el estado de tus turnos: confirmaciones, recordatorios y cancelaciones. Podés desactivar estas notificaciones en cualquier momento desde la configuración de tu dispositivo.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="s8">
+    <div class="section-num">08</div>
+    <h2>Tus derechos</h2>
+    <p>Como usuario de BarberUY tenés derecho a:</p>
+    <ul class="styled">
+      <li><strong>Acceder</strong> a los datos personales que tenemos sobre vos.</li>
+      <li><strong>Rectificar</strong> información incorrecta o desactualizada.</li>
+      <li><strong>Eliminar</strong> tu cuenta y todos tus datos de nuestra plataforma.</li>
+      <li><strong>Retirar el consentimiento</strong> para el uso de ubicación y notificaciones en cualquier momento.</li>
+    </ul>
+    <p>Para ejercer cualquiera de estos derechos, escribinos al correo de contacto indicado al final de este documento.</p>
+  </section>
+
+  <!-- 9 -->
+  <section id="s9">
+    <div class="section-num">09</div>
+    <h2>Seguridad</h2>
+    <p>Implementamos medidas técnicas para proteger tu información, incluyendo autenticación segura mediante Firebase Auth, transmisión de datos cifrada (HTTPS/TLS) y reglas de acceso en base de datos que impiden que usuarios no autorizados accedan a información ajena.</p>
+    <p>Ningún sistema es 100% infalible. Si detectás alguna vulnerabilidad o uso indebido de tus datos, por favor contactanos de inmediato.</p>
+  </section>
+
+  <!-- 10 -->
+  <section id="s10">
+    <div class="section-num">10</div>
+    <h2>Cambios a esta política</h2>
+    <p>Podemos actualizar esta política de privacidad ocasionalmente. Cuando lo hagamos, actualizaremos la fecha al inicio del documento. Te recomendamos revisarla periódicamente. El uso continuado de la app tras los cambios implica la aceptación de la nueva versión.</p>
+  </section>
+
+  <hr />
+
+  <div class="contact-box">
+    <h3>¿Tenés alguna pregunta?</h3>
+    <p>Si querés ejercer tus derechos o tenés dudas sobre cómo tratamos tu información, escribinos.</p>
+    <a href="mailto:contacto@barberuy.app">contacto@barberuy.app</a>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 BarberUY · Todos los derechos reservados · Uruguay
+</footer>
+
+</body>
+</html>
